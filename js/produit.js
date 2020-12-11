@@ -1,12 +1,17 @@
+//recuperer donnée dans l'URL
+let req =location.search.substring(1);
+console.log(req);
 let url = `http://127.0.0.1:3000/api/cameras`;
-fetch(url)
+
+if (req !== ""){
+    fetch(url)
 .then((reponse) => 
 reponse.json()
 .then((data) => {
     console.log(data);
     for(let tableauProduit of data){
         console.log(tableauProduit);
-        let liste = document.getElementById('liste');
+        let liste = document.getElementById('produit');
         liste.innerHTML += `
         <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card">
@@ -21,19 +26,8 @@ reponse.json()
     }
 })
 ).catch(erreur => console.log('erreur : ' + erreur));
-
-
-
-
-
-//Afficher le toast
-// let toast = document.getElementById('myToast');
-// toast.classList.add("show");
-// console.log(document.getElementById('closeToast'));
-// document.getElementById('closeToast').addEventListener('click', function(){
-//     toast.classList.toggle("show");
-// })
-
-//recuperer donnée dans l'URL
-// let req =location.search.substring(1);
-// console.log(req);
+}else{
+    alert('Veuillez choisir un produit');
+    let liste = document.getElementById('produit');
+        liste.innerHTML += `<a class="nav-link" href="./index.html">Retour à l'accueil</a>`
+}
