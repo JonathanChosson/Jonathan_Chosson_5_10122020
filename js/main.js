@@ -14,7 +14,7 @@ reponse.json()
                     <div class="card-body">
                         <h5 class="card-title">${tableauProduit.name}</h5>
                         <p class="card-text">${tableauProduit.description}</p>
-                        <a href="#" class="btn btn-primary">Voir ce produit</a>
+                        <a href="./produit.html?_id=${tableauProduit._id}" class="btn btn-primary">Voir ce produit</a>
                     </div>
             </div>
         </div>`;

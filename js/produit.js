@@ -1,19 +1,20 @@
 //recuperer donnée dans l'URL
-let req =location.search.substring(1);
-console.log(req);
+let idDemande =location.search.substring(5);
+console.log(idDemande);
 let url = `http://127.0.0.1:3000/api/cameras`;
 
-if (req !== ""){
+if (idDemande !== ""){
     fetch(url)
 .then((reponse) => 
 reponse.json()
 .then((data) => {
     console.log(data);
     for(let tableauProduit of data){
-        console.log(tableauProduit);
+        console.log(tableauProduit._id);
         let liste = document.getElementById('produit');
-        liste.innerHTML += `
-        <div class="col-sm-12 col-md-6 col-lg-3">
+        if(idDemande == tableauProduit._id){
+            liste.innerHTML = `
+        <div class="col">
             <div class="card">
                 <img src="${tableauProduit.imageUrl}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -23,6 +24,8 @@ reponse.json()
                     </div>
             </div>
         </div>`;
+        }else{
+        }
     }
 })
 ).catch(erreur => console.log('erreur : ' + erreur));
