@@ -20,5 +20,18 @@ let afficheVersions = (tableauProduit) => {
 
 let url = `http://127.0.0.1:3000/api/cameras`;
 let monPanier = localStorage;
-// monPanier.clear();
+monPanier.clear();
+console.log(monPanier.length);
 
+// Affichage de la pill
+if (window.addEventListener){
+    window.addEventListener("storage", onstorage, false);
+    } else {
+        window.addEventListener("storage", onstorage)
+    }
+
+    let onStorage = function() {
+        let ajoutPill = document.getElementById('lienPanier');
+        ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill">${monPanier.length}</span>`;
+        console.log(ajoutPill);
+    }
