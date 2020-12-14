@@ -58,7 +58,7 @@ if (idDemande !== ""){
                 btnAjoutPanier.addEventListener('click', function(){
                     console.log(monPanier);
                     monPanier.setItem(monPanier.length, idDemande);
-                    onStorage();
+                    pillOnStorage();
                     //Afficher le toast
                     let toast = document.getElementById('myToast');
                     toast.toggleAttribute("hidden");

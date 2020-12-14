@@ -27,7 +27,7 @@ reponse.json()
 })
 ).catch(erreur => console.log('erreur : ' + erreur));
 
-
+pillOnStorage();
 
 
 

@@ -20,8 +20,8 @@ let afficheVersions = (tableauProduit) => {
 
 let url = `http://127.0.0.1:3000/api/cameras`;
 let monPanier = localStorage;
-monPanier.clear();
-console.log(monPanier.length);
+// monPanier.clear();
+
 
 // Affichage de la pill
 if (window.addEventListener){
@@ -30,7 +30,7 @@ if (window.addEventListener){
         window.addEventListener("storage", onstorage)
     }
 
-    let onStorage = function() {
+    let pillOnStorage = function() {
         let ajoutPill = document.getElementById('lienPanier');
         ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill">${monPanier.length}</span>`;
         console.log(ajoutPill);
