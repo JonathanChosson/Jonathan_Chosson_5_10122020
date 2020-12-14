@@ -8,6 +8,18 @@ let affichePrix = (tableauProduit) => {
     return prix;
 }
 
+let afficheVersions = (tableauProduit) => {
+    let txt ='';
+    for(let versions of tableauProduit.lenses){
+        console.log(tableauProduit.lenses)
+        console.log(versions)
+        txt +=`<option value="${versions}">${versions}</option>`;
+        console.log(txt);
+        
+    }
+    return txt;
+}
+
 let url = `http://127.0.0.1:3000/api/cameras`;
 
 
