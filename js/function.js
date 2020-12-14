@@ -1,3 +1,4 @@
+//Fonction pour formater le prix XX XXX 
 let affichePrix = (tableauProduit) => {
     let prix = tableauProduit.price;
     prix = `${prix}`;
@@ -8,6 +9,7 @@ let affichePrix = (tableauProduit) => {
     return prix;
 }
 
+//Fonction pour ajouter des versions du produit
 let afficheVersions = (tableauProduit) => {
     let txt ='';
     for(let versions of tableauProduit.lenses){
