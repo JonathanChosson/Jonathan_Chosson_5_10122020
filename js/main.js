@@ -2,9 +2,7 @@ fetch(url)
 .then((reponse) => 
 reponse.json()
 .then((data) => {
-    console.log(data);
     for(let tableauProduit of data){
-        console.log(tableauProduit);
         let liste = document.getElementById('liste');
         let prix = affichePrix(tableauProduit);
         liste.innerHTML += `

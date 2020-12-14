@@ -37,11 +37,36 @@ if (idDemande !== ""){
                                         </select>
                                         <p class="card-text pt-2">${tableauProduit.description}</p>
                                         <a href="#" class="btn btn-primary" id="ajoutPanier">Ajouter au panier</a>
+                                        <div class="container">
+                                            <div class="toast show" id="myToast" hidden>
+                                                <div class="toast-header">
+                                                    <strong class="mr-auto"><i class="fa fa-grav"></i> Félicitation</strong>
+                                                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" id="closeToast">&times;</button>
+                                                </div>
+                                                <div class="toast-body">
+                                                        Votre produit à été ajouté au panier. <a href="panier.html" alt="panier">Voir mon panier</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>`;
+                //fonction pour ajouter au panier
+                let btnAjoutPanier = document.getElementById('ajoutPanier');
+                btnAjoutPanier.addEventListener('click', function(){
+                    console.log(monPanier);
+                    monPanier.setItem(monPanier.length, idDemande);
+                    //Afficher le toast
+                    let toast = document.getElementById('myToast');
+                    toast.toggleAttribute("hidden");
+                    btnAjoutPanier.setAttribute("hidden", "");
+                    document.getElementById('closeToast').addEventListener('click', function(){
+                        toast.setAttribute("hidden", "");
+                        btnAjoutPanier.removeAttribute("hidden");
+                    })
+                })
             }else{
             }
         }

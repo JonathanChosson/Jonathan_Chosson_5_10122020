@@ -1,6 +1,3 @@
-//fonction pour ajouter au panier
-let monPanier = localStorage;
-let ajoutPanier = document.getElementById('ajoutPanier');
 
 
 // console.log(monPanier);
