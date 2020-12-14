@@ -44,3 +44,6 @@ reponse.json()
 //recuperer donnée dans l'URL
 // let req =location.search.substring(1);
 // console.log(req);
+
+// pill html 
+//<span class="badge badge-primary badge-pill">14</span>
