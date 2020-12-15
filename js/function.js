@@ -20,7 +20,7 @@ let afficheVersions = (tableauProduit) => {
 
 let url = `http://127.0.0.1:3000/api/cameras`;
 let monPanier = localStorage;
-// monPanier.clear();
+monPanier.clear();
 
 
 // Affichage de la pill
@@ -31,7 +31,10 @@ if (window.addEventListener){
     }
 
     let pillOnStorage = function() {
-        let ajoutPill = document.getElementById('lienPanier');
-        ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill">${monPanier.length}</span>`;
-        console.log(ajoutPill);
+        if (monPanier.length == 0){
+
+        }else {
+            let ajoutPill = document.getElementById('lienPanier');
+        ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill badge-danger">${monPanier.length}</span>`;
+        }
     }

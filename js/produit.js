@@ -1,7 +1,7 @@
 //recuperer donnée dans l'URL
 let idDemande =location.search.substring(5);
 console.log(idDemande);
-
+pillOnStorage();
 
 if (idDemande !== ""){
     fetch(url)
