@@ -11,14 +11,14 @@ reponse.json()
                 <img src="${tableauProduit.imageUrl}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-7">
                                 <h5 class="card-title">${tableauProduit.name}</h5>
                             </div>
-                            <div class="col text-right">
+                            <div class="col-5 text-right">
                             <h5 class="card-title">${prix} €</h5>
                             </div>
                         </div>
-                        <p class="card-text">${tableauProduit.description}</p>
+                        <p class="card-text text-truncate">${tableauProduit.description}</p>
                         <a href="./produit.html?_id=${tableauProduit._id}" class="btn btn-primary">Voir ce produit</a>
                     </div>
             </div>
