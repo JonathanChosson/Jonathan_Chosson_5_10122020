@@ -1,20 +1,24 @@
 pillOnStorage();
+console.log(monPanier);
+console.log(monPanier.length); 
+console.log(typeof(monPanier));
 fetch(url)
     .then((reponse) => 
     reponse.json()
     .then((data) => {
-        if(monPanier.length !== 0){
+        let listePanier = document.getElementById('produitPanier');
+        let panierVide = document.getElementById('panierVide');
+        if(monPanier.length > 0){
             for(tableauProduit of data){
-                console.log(tableauProduit);
-                let listePanier = document.getElementById('produitPanier');
-                    for (let listeProduit = 0; listeProduit < monPanier.length; listeProduit ++){
-                        idProduit = monPanier.getItem(listeProduit);
-                        console.log(idProduit);
-                        console.log(tableauProduit._id);
+                let tableauPanier=Object.keys(monPanier).map(function(cle){
+                    return [Number(cle), monPanier[cle]];
+                })
+                    for (let listeProduit of tableauPanier){
+                        let idSuppr = listeProduit[0];
+                        console.log(idSuppr);
+                        idProduit = monPanier.getItem(listeProduit[0]);
                         if(idProduit == tableauProduit._id){
-                            console.log(tableauProduit.price);
                             let prix = affichePrix(tableauProduit.price);
-                            console.log(idProduit);
                             listePanier.innerHTML += `
                             <tr>
                                 <td class="w-25">
@@ -26,17 +30,22 @@ fetch(url)
                                 <td>
                                     <p>${prix} €</p>
                                 </td>
+                                <td>
+                                <a href="panier.html?sup=${idSuppr}" class="suppression" id="${idSuppr}"><span class="fas fa-trash-alt text-danger"></span></a>
+                                </td>
                             </tr>
                             `;
+                            //calcul et affiche le prix total du panier
                             let prixTotal = document.getElementById('prixTotal');
                             totalPanier += tableauProduit.price;
                             totalPanierAffichage = affichePrix(totalPanier);
                             prixTotal.innerHTML = `${totalPanierAffichage} €`;
                         }
                     }
+                supression();
             }
         }else{
-            listePanier.innerHTML =`
+            panierVide.innerHTML =`
                 <div class="col text-center">
                     <p>Votre Panier semble vide</p>
                     <img src="./images/add_to_cart.webp" alt="Panier vide" class="img-fluid" />
@@ -45,11 +54,3 @@ fetch(url)
         }
     })
 ).catch(erreur => console.log('erreur : ' + erreur));
-
-// console.log(monPanier);
-// monPanier.setItem('idDuPdt', 'qte');
-// console.log(monPanier);
-// monPanier.setItem('idDupdt2', 'qte');
-// console.log(monPanier);
-// monPanier.removeItem('idDuPdt');
-// console.log(monPanier);

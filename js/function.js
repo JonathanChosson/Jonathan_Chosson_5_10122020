@@ -18,6 +18,7 @@ let afficheVersions = (tableauProduit) => {
 }
 
 let url = `http://127.0.0.1:3000/api/cameras`;
+let urlPanier =`./panier.html`;
 let monPanier = localStorage;
 let totalPanier = 0;
 // monPanier.clear();
@@ -38,3 +39,19 @@ if (window.addEventListener){
         ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill badge-danger">${monPanier.length}</span>`;
         }
     }
+
+
+    // Bouton suppression
+    let supression = function(){
+        let idSuppr =location.search.substring(5);
+        if(idSuppr != ''){
+            console.log(idSuppr);
+            console.log(monPanier);
+            monPanier.removeItem(idSuppr);
+            location.assign(urlPanier);
+        }else {
+
+        }
+        ;
+    }
+    

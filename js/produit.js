@@ -55,7 +55,7 @@ if (idDemande !== ""){
                     </div>`;
                 //fonction pour ajouter au panier
                 let btnAjoutPanier = document.getElementById('ajoutPanier');
-                btnAjoutPanier.addEventListener('click', function(){
+                    btnAjoutPanier.addEventListener('click', function(){
                     console.log(monPanier);
                     monPanier.setItem(monPanier.length, idDemande);
                     pillOnStorage();

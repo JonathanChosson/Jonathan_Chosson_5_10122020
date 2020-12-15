@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0c9cc5d14e.js" crossorigin="anonymous"></script>
     <title>Orinoco</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
     <!-- Fin header -->
     
     <!-- Card de produit -->
-    <div class="container">
+    <div class="container" id="panierVide">
         <div class="row text-center">
             <div class="col">
                 <p>Contenu de votre panier</p>
@@ -47,6 +48,7 @@
                 <tr>
                     <th colspan="2">Produit</th>
                     <th>Prix</th>
+                    <th>Supprimer</th>
                 </tr>
             </thead>
             <tbody id="produitPanier">
@@ -56,6 +58,7 @@
                 <tr>
                     <th colspan="2">Total</th>
                     <th id="prixTotal"></th>
+                    <th></th>
                 </tr>
             </tfoot>
         </table>
