@@ -10,10 +10,10 @@ if (idDemande !== ""){
     .then((data) => {
         for(let tableauProduit of data){
             let liste = document.getElementById('produit');
+            console.log(tableauProduit);
             if(idDemande == tableauProduit._id){
-                let prix = affichePrix(tableauProduit);
+                let prix = affichePrix(tableauProduit.price);
                 let selectionVersion = afficheVersions(tableauProduit);
-                console.log(data);
                 liste.innerHTML = `
                     <div class="col">
                         <div class="card">

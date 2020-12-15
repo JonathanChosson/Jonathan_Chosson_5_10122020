@@ -4,7 +4,7 @@ reponse.json()
 .then((data) => {
     for(let tableauProduit of data){
         let liste = document.getElementById('liste');
-        let prix = affichePrix(tableauProduit);
+        let prix = affichePrix(tableauProduit.price);
         liste.innerHTML += `
         <div class="col-sm-12 col-md-6 col-lg-3 pb-3">
             <div class="card">

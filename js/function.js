@@ -1,7 +1,6 @@
 //Fonction pour formater le prix XX XXX 
-let affichePrix = (tableauProduit) => {
-    let prix = tableauProduit.price;
-    prix = `${prix}`;
+let affichePrix = (prixEnvoi) => {
+    prix = `${prixEnvoi}`;
     finPrix = prix.slice(-3);
     debutPrix = prix.replace(finPrix, '');
     prix = debutPrix + " " + finPrix;
@@ -20,7 +19,8 @@ let afficheVersions = (tableauProduit) => {
 
 let url = `http://127.0.0.1:3000/api/cameras`;
 let monPanier = localStorage;
-monPanier.clear();
+let totalPanier = 0;
+// monPanier.clear();
 
 
 // Affichage de la pill
