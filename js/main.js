@@ -7,7 +7,7 @@ reponse.json()
         let liste = document.getElementById('liste');
         let prix = affichePrix(tableauProduit.price);
         liste.innerHTML += `
-        <div class="col-sm-12 col-md-6 col-lg-4 pb-3">
+        <div class="col-sm-12 col-md-6 col-lg-6 pb-3">
             <div class="card">
                 <img src="${tableauProduit.imageUrl}" class="card-img-top" alt="...">
                     <div class="card-body">
