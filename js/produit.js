@@ -1,6 +1,6 @@
 //recuperer donnée dans l'URL
 let idDemande =location.search.substring(5);
-console.log(idDemande);
+//Mise à jour de la pill du panier
 pillOnStorage();
 
 if (idDemande !== ""){
@@ -40,7 +40,7 @@ if (idDemande !== ""){
                                         <div class="container">
                                             <div class="toast show" id="myToast" hidden>
                                                 <div class="toast-header">
-                                                    <strong class="mr-auto"><i class="fa fa-grav"></i> Félicitation</strong>
+                                                    <strong class="mr-auto"><i class="fa fa-grav"></i> Félicitations</strong>
                                                     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" id="closeToast">&times;</button>
                                                 </div>
                                                 <div class="toast-body">

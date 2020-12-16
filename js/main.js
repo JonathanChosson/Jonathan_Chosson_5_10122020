@@ -1,15 +1,13 @@
+//Mise à jour de la pill du panier
 pillOnStorage();
-fetch(url)
-.then((reponse) => 
-reponse.json()
-.then((data) => {
-    for(let produit of data){
+
+    //boucle pour chaque iteration dans data (catalogue des pdts)
+    for(let produit of catalogue()){
+        //recupère l'élément liste dans le HTML
         let liste = document.getElementById('liste');
+        //formatage du prix
         let prix = affichePrix(produit.price);
-        console.log(produit);
-        // class FicheProduit {
-        //     constructor
-        // }
+        //insertion de l'HTML
         liste.innerHTML += `
         <div class="col-sm-12 col-md-6 col-lg-6 pb-3">
             <div class="card">
@@ -29,9 +27,6 @@ reponse.json()
             </div>
         </div>`;
     }
-})
-).catch(erreur => console.log('erreur : ' + erreur));
-
 
 
 
