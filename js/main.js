@@ -1,3 +1,4 @@
+pillOnStorage();
 fetch(url)
 .then((reponse) => 
 reponse.json()
@@ -6,7 +7,7 @@ reponse.json()
         let liste = document.getElementById('liste');
         let prix = affichePrix(tableauProduit.price);
         liste.innerHTML += `
-        <div class="col-sm-12 col-md-6 col-lg-3 pb-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 pb-3">
             <div class="card">
                 <img src="${tableauProduit.imageUrl}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -15,7 +16,7 @@ reponse.json()
                                 <h5 class="card-title">${tableauProduit.name}</h5>
                             </div>
                             <div class="col-5 text-right">
-                            <h5 class="card-title">${prix} €</h5>
+                                <h5 class="card-title">${prix} €</h5>
                             </div>
                         </div>
                         <p class="card-text text-truncate">${tableauProduit.description}</p>
@@ -27,7 +28,6 @@ reponse.json()
 })
 ).catch(erreur => console.log('erreur : ' + erreur));
 
-pillOnStorage();
 
 
 
