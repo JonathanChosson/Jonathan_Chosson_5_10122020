@@ -1,8 +1,23 @@
 //Variables Globales
 let url = `http://localhost:3000/api/cameras`;
 let urlPanier =`./panier.html`;
-let monPanier = localStorage;
 let totalPanier = 0;
+
+//organiser le panier avec un tableau dedans
+let monPanier = localStorage;
+if (monPanier.length ==0){
+    let tableauPanier =[];
+monPanier.setItem(0, JSON.stringify(tableauPanier));
+}else {
+
+};
+
+
+//Afficher le contenu de local storage
+    let produitJSON = monPanier[0];
+    let produitDansPanier = produitJSON && JSON.parse(produitJSON);
+    console.log(produitDansPanier);
+
 
 // monPanier.clear();
 
@@ -32,11 +47,11 @@ if (window.addEventListener){
     }
 
     let pillOnStorage = function() {
-        if (monPanier.length == 0){
+            if (produitDansPanier.length == 0){
 
-        }else {
-            let ajoutPill = document.getElementById('lienPanier');
-        ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill badge-danger">${monPanier.length}</span>`;
+            }else {
+                let ajoutPill = document.getElementById('lienPanier');
+            ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill badge-danger">${produitDansPanier.length}</span>`;
         }
     }
 
@@ -54,5 +69,14 @@ if (window.addEventListener){
         ;
     }
     
-
-
+    //Création class produit
+    class Produit {
+        constructor(id, nom, description, prix, qte, imgurl){
+            this.id = id;
+            this.nom = nom;
+            this.description = description;
+            this.prix = prix;
+            this.qte = qte;
+            this.imgurl = imgurl;
+        }
+    }

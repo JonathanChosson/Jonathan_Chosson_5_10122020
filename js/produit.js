@@ -59,7 +59,11 @@ if (idDemande !== ""){
         //fonction pour ajouter au panier
         let btnAjoutPanier = document.getElementById('ajoutPanier');
         btnAjoutPanier.addEventListener('click', function(){
-            monPanier.setItem(monPanier.length, idDemande);
+            let objetProduit = new Produit(idDemande, ficheProduit.name,ficheProduit.description,ficheProduit.price, 1,ficheProduit.imageUrl);
+            // monPanier.setItem(monPanier.length, JSON.stringify(objetProduit));
+            console.log(produitDansPanier);
+            produitDansPanier.push(objetProduit);
+            monPanier.setItem(0, JSON.stringify(produitDansPanier));
             pillOnStorage();
             //Afficher le toast
             let toast = document.getElementById('myToast');

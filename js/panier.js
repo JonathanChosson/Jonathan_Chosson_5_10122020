@@ -1,15 +1,35 @@
 pillOnStorage();
-console.log(monPanier);
-let tableauPanier;
-if(monPanier.length > 0){
-    tableauPanier=Object.keys(monPanier).map(function(cle){
-        return [Number(cle), monPanier[cle]];
-        
+if(produitDansPanier.length > 0){
+    for (produitPanier of produitDansPanier){
+        let listePanier = document.getElementById('produitPanier');
+        let positionProduit = produitDansPanier.indexOf(produitPanier);
+        console.log(positionProduit);
+        let prix = affichePrix(produitPanier.prix);
+        listePanier.innerHTML += `
+        <tr>
+            <td class="w-25">
+                <img src="${produitPanier.imgurl}" class="img-fluid img-thumbnail" alt="...">
+            </td>
+            <td>
+                <p>${produitPanier.nom}</p>
+            </td>
+            <td>
+                <p>${prix} €</p>
+            </td>
+            <td>
+                <p>${produitPanier.qte}</p>
+            </td>
+            <td>
+            <a href="panier.html" class="suppression" id="${positionProduit}"><span class="fas fa-trash-alt text-danger"></span></a>
+            </td>
+        </tr>
+        `;
+        //calcul et affiche le prix total du panier
+        let prixTotal = document.getElementById('prixTotal');
+        totalPanier += produitPanier.prix;
+        totalPanierAffichage = affichePrix(totalPanier);
+        prixTotal.innerHTML = `${totalPanierAffichage} €`;
     }
-    );
-    for (produit of tableauPanier){
-        console.log(produit);
-    };
 }else{
     let panierVide = document.getElementById('panierVide');
     panierVide.innerHTML =`

@@ -2,7 +2,6 @@
 pillOnStorage();
 //definition de l'URL de l'API
 url = `http://localhost:3000/api/cameras`;
-
 //fetch de l'URL
 fetch(url)
     .then((reponse) => 
