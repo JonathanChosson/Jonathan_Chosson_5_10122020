@@ -3,7 +3,6 @@ if(produitDansPanier.length > 0){
     for (produitPanier of produitDansPanier){
         let listePanier = document.getElementById('produitPanier');
         let positionProduit = produitDansPanier.indexOf(produitPanier);
-        console.log(positionProduit);
         let prix = affichePrix(produitPanier.prix);
         listePanier.innerHTML += `
         <tr>
@@ -20,7 +19,7 @@ if(produitDansPanier.length > 0){
                 <p>${produitPanier.qte}</p>
             </td>
             <td>
-            <a href="panier.html" class="suppression" id="${positionProduit}"><span class="fas fa-trash-alt text-danger"></span></a>
+            <a href="#" class="suppression" id="${positionProduit}"><span class="fas fa-trash-alt text-danger" id="${positionProduit}"></span></a>
             </td>
         </tr>
         `;
@@ -30,6 +29,7 @@ if(produitDansPanier.length > 0){
         totalPanierAffichage = affichePrix(totalPanier);
         prixTotal.innerHTML = `${totalPanierAffichage} €`;
     }
+    supression();
 }else{
     let panierVide = document.getElementById('panierVide');
     panierVide.innerHTML =`

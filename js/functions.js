@@ -48,7 +48,6 @@ if (window.addEventListener){
 
     let pillOnStorage = function() {
             if (produitDansPanier.length == 0){
-
             }else {
                 let ajoutPill = document.getElementById('lienPanier');
             ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill badge-danger">${produitDansPanier.length}</span>`;
@@ -58,15 +57,17 @@ if (window.addEventListener){
 
     // Bouton suppression
     let supression = function(){
-        let idSuppr =location.search.substring(5);
-        if(idSuppr != ''){
-            console.log(idSuppr);
-            console.log(monPanier);
-            monPanier.removeItem(idSuppr);
-            location.assign(urlPanier);
-        }else {
+        let boutonsSuppression = document.querySelectorAll('.suppression');
+        for (lien of boutonsSuppression){
+            idasupp = lien.addEventListener('click', event =>{
+                console.log('suppression produit ' + event.target.id);
+                console.log(produitDansPanier);
+                produitDansPanier.splice(event.target.id, 1);
+                monPanier.setItem(0, JSON.stringify(produitDansPanier));
+                console.log(produitDansPanier);
+                location.reload();
+            });
         }
-        ;
     }
     
     //Création class produit

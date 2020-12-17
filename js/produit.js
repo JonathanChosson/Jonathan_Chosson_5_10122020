@@ -61,7 +61,6 @@ if (idDemande !== ""){
         btnAjoutPanier.addEventListener('click', function(){
             let objetProduit = new Produit(idDemande, ficheProduit.name,ficheProduit.description,ficheProduit.price, 1,ficheProduit.imageUrl);
             // monPanier.setItem(monPanier.length, JSON.stringify(objetProduit));
-            console.log(produitDansPanier);
             produitDansPanier.push(objetProduit);
             monPanier.setItem(0, JSON.stringify(produitDansPanier));
             pillOnStorage();
