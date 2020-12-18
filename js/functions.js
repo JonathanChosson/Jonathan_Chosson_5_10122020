@@ -49,8 +49,12 @@ if (window.addEventListener){
     let pillOnStorage = function() {
             if (produitDansPanier.length == 0){
             }else {
-                let ajoutPill = document.getElementById('lienPanier');
-            ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill badge-danger">${produitDansPanier.length}</span>`;
+            let ajoutPill = document.getElementById('lienPanier');
+            let calculPill = 0;
+            for(produit of produitDansPanier){
+                calculPill += produit.qte;
+            }
+            ajoutPill.innerHTML = `Panier <span class="badge badge-primary badge-pill badge-danger">${calculPill}</span>`;
         }
     }
 
