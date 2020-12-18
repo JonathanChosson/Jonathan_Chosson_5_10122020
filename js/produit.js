@@ -46,8 +46,7 @@ if (idDemande !== ""){
                                             <strong class="mr-auto"><i class="fa fa-grav"></i> Félicitations</strong>
                                             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" id="closeToast">&times;</button>
                                         </div>
-                                        <div class="toast-body">
-                                                Votre produit à été ajouté au panier. <a href="panier.html" alt="panier">Voir mon panier</a>
+                                        <div class="toast-body" id="message">
                                         </div>
                                     </div>
                                 </div>
@@ -73,17 +72,18 @@ if (idDemande !== ""){
                     case listeProduit.id:
                         dejaPresent = true;
                         indexModification = produitDansPanier.indexOf(listeProduit);
-                        console.log(indexModification);
-                        console.log(dejaPresent);
                     break;
                 }
             }
+            let messageToast = document.getElementById('message');
             // execute l'action d'indentation si déjà présent ou d'ajout si nouveau produit
             if (dejaPresent){
                 produitDansPanier[indexModification].qte ++;
+                messageToast.innerHTML = `Vous avez <span class="text-primary">${produitDansPanier[indexModification].qte}</span> ${produitDansPanier[indexModification].nom} dans votre panier. <a href="panier.html" alt="panier">Voir mon panier</a>`;
             }
             else{
                 produitDansPanier.push(objetProduit);
+                messageToast.innerHTML = `Votre produit à été ajouté à votre panier. <a href="panier.html" alt="panier">Voir mon panier</a>`;
             }
             monPanier.setItem(0, JSON.stringify(produitDansPanier));
             //mise à jour de la pastille du nombre de produit dans le panier
