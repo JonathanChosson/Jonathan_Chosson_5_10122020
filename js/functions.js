@@ -61,9 +61,19 @@ if (window.addEventListener){
 
     // Bouton suppression
     let supression = function(){
+
+        //implémentation id du pdt dans la modal
+        let tableauCorbeille = document.querySelectorAll('.corbeille');
+        for (boutonCorbeille of tableauCorbeille){
+            boutonCorbeille.addEventListener('click', event =>{
+                console.log(event.target);
+                modalId= document.querySelector('.suppression');
+                modalId.innerHTML = `<span id="${event.target.id}">Supprimer</span>`;
+            });
+        }
         let boutonsSuppression = document.querySelectorAll('.suppression');
         for (lien of boutonsSuppression){
-            idasupp = lien.addEventListener('click', event =>{
+                lien.addEventListener('click', event =>{
                 produitDansPanier.splice(event.target.id, 1);
                 monPanier.setItem(0, JSON.stringify(produitDansPanier));
                 location.reload();

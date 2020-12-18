@@ -19,10 +19,13 @@ if(produitDansPanier.length > 0){
                 <p>${produitPanier.qte}</p>
             </td>
             <td>
-            <a href="#" class="suppression" id="${positionProduit}"><span class="fas fa-trash-alt text-danger" id="${positionProduit}"></span></a>
+                <button type="button" class="rounded corbeille" data-toggle="modal" data-target="#exampleModal">
+                    <span class="fas fa-trash-alt text-danger" id="${positionProduit}"></span>
+                </button>
             </td>
         </tr>
         `;
+        
         //calcul et affiche le prix total du panier
         let prixTotal = document.getElementById('prixTotal');
         totalPanier += produitPanier.prix;
