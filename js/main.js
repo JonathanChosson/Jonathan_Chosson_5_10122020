@@ -36,18 +36,3 @@ fetch(url)
         }
     })
     ).catch(erreur => console.log('erreur : ' + erreur));
-
-//Afficher le toast
-// let toast = document.getElementById('myToast');
-// toast.classList.add("show");
-// console.log(document.getElementById('closeToast'));
-// document.getElementById('closeToast').addEventListener('click', function(){
-//     toast.classList.toggle("show");
-// })
-
-//recuperer donnée dans l'URL
-// let req =location.search.substring(1);
-// console.log(req);
-
-// pill html 
-//<span class="badge badge-primary badge-pill">14</span>

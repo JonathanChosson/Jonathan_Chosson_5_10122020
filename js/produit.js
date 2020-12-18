@@ -59,12 +59,36 @@ if (idDemande !== ""){
         //fonction pour ajouter au panier
         let btnAjoutPanier = document.getElementById('ajoutPanier');
         btnAjoutPanier.addEventListener('click', function(){
+            //instace du nouveau produit
             let objetProduit = new Produit(idDemande, ficheProduit.name,ficheProduit.description,ficheProduit.price, 1,ficheProduit.imageUrl);
-            // monPanier.setItem(monPanier.length, JSON.stringify(objetProduit));
-            produitDansPanier.push(objetProduit);
+            //initialise le fait qu'il soit déjà présent comme faux
+            let dejaPresent = false;
+            //initialise l'index du produit si présent
+            let indexModification;
+            //Parcours le tableau produitDansPanier
+            for (listeProduit of produitDansPanier){
+                //verifie si l'ID du nouveau produi est déjà présent dans le panier
+                //si oui deja present passe true et indexModification prend la valeur du produit à modifier dans produitDansPanier
+                switch (objetProduit.id){
+                    case listeProduit.id:
+                        dejaPresent = true;
+                        indexModification = produitDansPanier.indexOf(listeProduit);
+                        console.log(indexModification);
+                        console.log(dejaPresent);
+                    break;
+                }
+            }
+            // execute l'action d'indentation si déjà présent ou d'ajout si nouveau produit
+            if (dejaPresent){
+                produitDansPanier[indexModification].qte ++;
+            }
+            else{
+                produitDansPanier.push(objetProduit);
+            }
             monPanier.setItem(0, JSON.stringify(produitDansPanier));
+            //mise à jour de la pastille du nombre de produit dans le panier
             pillOnStorage();
-            //Afficher le toast
+            //Afficher le toast qui confirme l'ajout au panier
             let toast = document.getElementById('myToast');
             toast.toggleAttribute("hidden");
             btnAjoutPanier.setAttribute("hidden", "");
@@ -76,6 +100,7 @@ if (idDemande !== ""){
     })
 ).catch(erreur => console.log('erreur : ' + erreur));
 }else{
+    //panier est vide alert l'utilisateur
     alert('Veuillez choisir un produit');
     let liste = document.getElementById('produit');
         liste.innerHTML += `<a class="nav-link" href="./index.html">Retour à l'accueil</a>`
