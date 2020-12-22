@@ -69,7 +69,7 @@
     <aside class="container">
         <p class="font-weight-bold">Passer commande</p>
         <p>Merci de remplir ce formulaire pour passer votre commande, tous les champs sont obligatoires</p>
-        <form>
+        <form id="formulaire">
             <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="validationPrenom">Prénom</label>
@@ -80,8 +80,8 @@
                 <input type="text" class="form-control" id="validationNom" placeholder="Nom" required>
             </div>
             <div class="col-md-4 mb-3">
-                <label for="validationDefaultEmail">Email</label>
-                <input type="email" class="form-control" id="validationDefaultEmail" placeholder="Email" aria-describedby="inputGroupPrepend2" required>
+                <label for="validationEmail">Email</label>
+                <input type="email" class="form-control" id="validationEmail" placeholder="Email" aria-describedby="inputGroupPrepend2" required>
                 </div>
             </div>
             </div>
@@ -107,7 +107,7 @@
                 </label>
             </div>
             </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="submit" id="commander">Passer la commande</button>
         </form>
     </aside>
     <!--Footer-->

@@ -43,3 +43,49 @@ if(produitDansPanier.length > 0){
     `;
 }
 
+let formulaire = document.getElementById('formulaire');
+
+let boutoncommande = document.getElementById('commander');
+boutoncommande.addEventListener("click", function(event){
+    if (formulaire.checkValidity()){
+        event.preventDefault();
+        const contact = {
+            firstName : document.getElementById('validationPrenom').value,
+            lastName : document.getElementById('validationNom').value,
+            address : document.getElementById('validationAdresse').value,
+            city : document.getElementById('validationVille').value,
+            email : document.getElementById('validationEmail').value
+        }
+        let products =[];
+        for (listeId of produitDansPanier){
+            if (listeId.qte > 1){
+                console.log(listeId.qte);
+                for (let i = 0; i < listeId.qte;i ++){
+                    products.push(listeId.id);
+                }
+            }else{
+                products.push(listeId.id);
+            }
+        }
+        console.log(products);
+            fetch("http://localhost:3000/api/cameras/order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ contact, products })
+            })
+                .then(response => response.json()) 
+                .then(data => {
+                    console.log(data);
+                    sessionStorage.setItem('order', JSON.stringify(data));
+                    console.log(sessionStorage);
+                    // document.location.href = "/commande.html"
+                })
+                .catch(error => {
+                    window.alert(error);
+                })
+    }else{
+    }
+    // event.preventDefault();
+})

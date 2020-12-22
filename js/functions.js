@@ -17,7 +17,7 @@ monPanier.setItem(0, JSON.stringify(tableauPanier));
     let produitJSON = monPanier[0];
     let produitDansPanier = produitJSON && JSON.parse(produitJSON);
     console.log(produitDansPanier);
-
+    console.log(sessionStorage);
 
 // monPanier.clear();
 
