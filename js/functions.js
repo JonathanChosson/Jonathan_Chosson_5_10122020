@@ -19,7 +19,9 @@ monPanier.setItem(0, JSON.stringify(tableauPanier));
     console.log(produitDansPanier);
     console.log(sessionStorage);
 
-// monPanier.clear();
+let viderPanier =() => {
+    monPanier.clear();
+} 
 
 //Fonction pour formater le prix XX XXX 
 let affichePrix = (prixEnvoi) => {
@@ -28,6 +30,18 @@ let affichePrix = (prixEnvoi) => {
     debutPrix = prix.replace(finPrix, '');
     prix = debutPrix + " " + finPrix;
     return prix;
+}
+
+//calcul et affiche le prix total du panier
+let afficheTotalPanier = () => {
+    if(produitPanier.qte >1){
+        totalProduit = produitPanier.qte * produitPanier.prix;
+        totalPanier += totalProduit;
+    }else{
+        totalPanier += produitPanier.prix;
+    }
+    
+    totalPanierAffichage = affichePrix(totalPanier);
 }
 
 //Fonction pour ajouter des versions du produit

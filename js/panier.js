@@ -4,6 +4,7 @@ if(produitDansPanier.length > 0){
         let listePanier = document.getElementById('produitPanier');
         let positionProduit = produitDansPanier.indexOf(produitPanier);
         let prix = affichePrix(produitPanier.prix);
+        let prixTotal = document.getElementById('prixTotal');
         listePanier.innerHTML += `
         <tr>
             <td class="w-25">
@@ -26,15 +27,14 @@ if(produitDansPanier.length > 0){
         </tr>
         `;
         
-        //calcul et affiche le prix total du panier
-        let prixTotal = document.getElementById('prixTotal');
-        totalPanier += produitPanier.prix;
-        totalPanierAffichage = affichePrix(totalPanier);
+        afficheTotalPanier();
         prixTotal.innerHTML = `${totalPanierAffichage} €`;
     }
     supression();
 }else{
     let panierVide = document.getElementById('panierVide');
+    let formulaireCommande =document.getElementById('formulaireCommande');
+    formulaireCommande.classList.add("d-none");
     panierVide.innerHTML =`
     <div class="col text-center">
         <p>Votre Panier semble vide</p>
@@ -80,12 +80,11 @@ boutoncommande.addEventListener("click", function(event){
                     console.log(data);
                     sessionStorage.setItem('order', JSON.stringify(data));
                     console.log(sessionStorage);
-                    // document.location.href = "/commande.html"
+                    document.location.href = "/commande.html"
                 })
                 .catch(error => {
                     window.alert(error);
                 })
     }else{
     }
-    // event.preventDefault();
 })

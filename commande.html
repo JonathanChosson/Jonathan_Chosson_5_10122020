@@ -17,20 +17,19 @@
                 <nav class="navbar navbar-expand-md navbar-light bg-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
+                        </button>
                         <a class="navbar-brand" href="./index.html"><img class="img-fluid rounded" src="./images/logo.png" alt="Logo Orinoco" style="height: 40px;" /></a>
                     
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="./index.html">Accueil <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./panier.html" id="lienPanier">Panier</a>
-                                </li>
-                            </ul>
-                        </div>
-                    
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./index.html">Accueil <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./panier.html" id="lienPanier">Panier</a>
+                            </li>
+                        </ul>
+                    </button>
                 </nav>
             </div>
         </div>
@@ -39,20 +38,11 @@
 
     <!-- Description -->
     <div class="jumbotron">
-        <h1 class="display-10">Bienvenu sur Orinoco</h1>
-        <p class="lead">Retrouvez notre sélection d'appareils photo, ainsi que d'objectifs de collection.</p>
-        <!-- <hr class="my-4">
-        <p>Faîtes votre choix parmis nos différents modèles, soyez livré et photographiez.</p> -->
+        <h1 class="display-10" id="titreMerci"></h1>
+        <p class="lead" id="texteCommande"></p>
+        <h2><a href="./index.html" title="Accueil" class="navbar-brand">Retour à l'accueil</a></h2>
     </div>
     <!-- Fin description -->
-
-    <!-- Card de produit -->
-    <div class="container">
-        <div class="row" id="liste">
-            
-        </div>
-    </div>
-    <!-- fin Card de produit -->
 
     <!--Footer-->
     <footer class="bg-light">
@@ -60,11 +50,11 @@
             <div class="row">
                 <div class="col">
                     <ul class="list-inline text-center text-center">
-                        <li class="list-inline-item"><a href="./index.html" title="Accueil">Accueil</a></li>
+                        <li class="list-inline-item"><a href="./index.html" alt="Accueil">Accueil</a></li>
                         <li class="list-inline-item">&middot;</li>
-                        <li class="list-inline-item"><a href="#" title="Contact">Contact</a></li>
+                        <li class="list-inline-item"><a href="#" alt="Contact">Contact</a></li>
                         <li class="list-inline-item">&middot;</li>
-                        <li class="list-inline-item"><a href="#" title="Mentions légales">Mentions légales</a></li>
+                        <li class="list-inline-item"><a href="#" alt="Mentions légales">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,7 +64,7 @@
     <!--Fin footer-->
     <!-- Script -->
     <script src="./js/functions.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/commande.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
