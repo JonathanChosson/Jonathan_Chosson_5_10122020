@@ -1,4 +1,4 @@
-# Projet La Chouette Agence 
+# Projet Orinoco
 
 ## Explication du TP
 ### Créer un site de e-commerce
@@ -14,7 +14,7 @@ Objectif créer un site de e-commerce :
 <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"/>
-![1](https://github-readme-stats.vercel.app/api/top-langs/?username=Naereen&theme=blue-green)
+
 
 ## Avancement
 
