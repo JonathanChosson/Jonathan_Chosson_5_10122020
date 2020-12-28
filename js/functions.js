@@ -76,7 +76,7 @@ if (window.addEventListener){
     // Bouton suppression
     let supression = function(){
 
-        //implémentation id du pdt dans la modal
+        //implémentation id du pdt dans la modale
         let tableauCorbeille = document.querySelectorAll('.corbeille');
         for (boutonCorbeille of tableauCorbeille){
             boutonCorbeille.addEventListener('click', event =>{
