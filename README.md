@@ -14,7 +14,7 @@ Objectif créer un site de e-commerce :
 <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"/>
-![1](https://github-readme-stats.vercel.app/api/top-langs/?username=Naereen&theme=blue-green)
+
 
 ## Avancement
 
@@ -23,6 +23,10 @@ Objectif créer un site de e-commerce :
             alt="CSS Valide !" />
  <img src="https://forthebadge.com/images/badges/validated-html5.svg" />
 
+## Demo des fonctionalités 
+<p>Cliquez pour lire la vidéo</p>
+
+[![fonctionalités](https://img.youtube.com/vi/WkchK2hZ3r4/0.jpg)](https://www.youtube.com/watch?v=WkchK2hZ3r4)
 
 ## Auteur
 <img src='https://img.shields.io/badge/Autor-Chosson Jonathan-blue' />
