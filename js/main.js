@@ -15,23 +15,26 @@ fetch(url)
             //formatage du prix
             let prix = affichePrix(produit.price);
             //insertion de l'HTML sous forme de card pour chaque PDT
+            //création des éléments
             let mainCard = document.createElement("div");
-            mainCard.classList.add("col-sm-12","col-md-6","col-lg-6","pb-3");
             let card = document.createElement("div");
-            card.classList.add("card");
-            card.innerHTML = `<img src="${produit.imageUrl}" class="card-img-top" alt="${produit.name}">`;
             let cardBody = document.createElement("div");
-            cardBody.classList.add("card-body");
-            card.appendChild(cardBody);
             let row = document.createElement("div");
-            row.classList.add("row");
-            cardBody.appendChild(row);
             let colTitle = document.createElement("div");
+            let colPrix = document.createElement("div");
+            //ajout des class CSS
+            mainCard.classList.add("col-sm-12","col-md-6","col-lg-6","pb-3");
+            card.classList.add("card");
+            cardBody.classList.add("card-body");
             colTitle.classList.add("col-7");
+            row.classList.add("row");
+            colPrix.classList.add("col-5", "text-right");
+            //implémentation du contenu
+            card.innerHTML = `<img src="${produit.imageUrl}" class="card-img-top" alt="${produit.name}">`;
+            card.appendChild(cardBody);
+            cardBody.appendChild(row);
             colTitle.innerHTML =`<h5 class="card-title">${produit.name}</h5>`;
             row.appendChild(colTitle);
-            let colPrix = document.createElement("div");
-            colPrix.classList.add("col-5", "text-right");
             colPrix.innerHTML =`<h5 class="card-title">${prix} €</h5>`;
             row.appendChild(colPrix);
             cardBody.innerHTML+=`<p class="card-text text-truncate">${produit.description}</p>`;
