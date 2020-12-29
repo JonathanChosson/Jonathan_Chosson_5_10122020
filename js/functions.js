@@ -75,8 +75,7 @@ if (window.addEventListener){
 
     // Bouton suppression
     let supression = function(){
-
-        //implémentation id du pdt dans la modal
+        //implémentation id du pdt dans la modale
         let tableauCorbeille = document.querySelectorAll('.corbeille');
         for (boutonCorbeille of tableauCorbeille){
             boutonCorbeille.addEventListener('click', event =>{
@@ -94,6 +93,31 @@ if (window.addEventListener){
             });
         }
     }
+
+    //ajout Produit
+    let plusProduit = function(){
+        let boutonsAjout = document.querySelectorAll('.plusQte');
+        for (ajout of boutonsAjout){
+            ajout.addEventListener('click', event=>{
+                produitDansPanier[event.target.id].qte ++;
+                monPanier.setItem(0, JSON.stringify(produitDansPanier));
+                location.reload();
+            })
+        }
+    }
+
+    //moins Produit
+    let moinsProduit = function(){
+        let boutonsretrait = document.querySelectorAll('.moinsQte');
+        for (retrait of boutonsretrait){
+            retrait.addEventListener('click', event=>{
+                produitDansPanier[event.target.id].qte --;
+                monPanier.setItem(0, JSON.stringify(produitDansPanier));
+                location.reload();
+            })
+        }
+    }
+
     
     //Création class produit
     class Produit {
