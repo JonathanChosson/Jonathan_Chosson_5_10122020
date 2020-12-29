@@ -41,10 +41,10 @@ fetch(url)
             cardBody.innerHTML +=`<a href="./produit.html?_id=${produit._id}" class="btn btn-primary">Voir ce produit</a>`;
             mainCard.appendChild(card);
             liste.appendChild(mainCard);
-            // liste.innerHTML += `
+            // Structure de sortie
             // <div class="col-sm-12 col-md-6 col-lg-6 pb-3">
             //     <div class="card">
-            //         <img src="${produit.imageUrl}" class="card-img-top" alt="...">
+            //         <img src="${produit.imageUrl}" class="card-img-top" alt="${produit.name}">
             //             <div class="card-body">
             //                 <div class="row">
             //                     <div class="col-7">
@@ -58,7 +58,7 @@ fetch(url)
             //                 <a href="./produit.html?_id=${produit._id}" class="btn btn-primary">Voir ce produit</a>
             //             </div>
             //     </div>
-            // </div>`;
+            // </div>
         }
     })
     ).catch(erreur => console.log('erreur : ' + erreur));
