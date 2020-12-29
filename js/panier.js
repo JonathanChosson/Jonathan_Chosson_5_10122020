@@ -5,6 +5,12 @@ if(produitDansPanier.length > 0){
         let positionProduit = produitDansPanier.indexOf(produitPanier);
         let prix = affichePrix(produitPanier.prix);
         let prixTotal = document.getElementById('prixTotal');
+        let txtQte = "";
+        if(produitPanier.qte > 1){
+            txtQte = `<p><button type="button" class="rounded moinsQte"><span class="fas fa-minus" id="${positionProduit}"></span></button> ${produitPanier.qte} <button type="button" class="rounded plusQte"><span class="fas fa-plus" id="${positionProduit}"></span></button></p>`;
+        }else{
+            txtQte = `<p>${produitPanier.qte} <button type="button" class="rounded plusQte"><span class="fas fa-plus" id="${positionProduit}"></span></button></p>`;
+        }
         listePanier.innerHTML += `
         <tr>
             <td class="w-25">
@@ -17,7 +23,7 @@ if(produitDansPanier.length > 0){
                 <p>${prix} €</p>
             </td>
             <td>
-                <p>${produitPanier.qte}</p>
+                ${txtQte}
             </td>
             <td>
                 <button type="button" class="rounded corbeille" data-toggle="modal" data-target="#exampleModal">
@@ -26,11 +32,12 @@ if(produitDansPanier.length > 0){
             </td>
         </tr>
         `;
-        
         afficheTotalPanier();
         prixTotal.innerHTML = `${totalPanierAffichage} €`;
     }
     supression();
+    plusProduit();
+    moinsProduit();
 }else{
     let panierVide = document.getElementById('panierVide');
     let formulaireCommande =document.getElementById('formulaireCommande');
