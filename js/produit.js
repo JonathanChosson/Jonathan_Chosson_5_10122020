@@ -66,7 +66,7 @@ if (idDemande !== ""){
                                 </div>`;
         //fonction pour ajouter au panier
         let btnAjoutPanier = document.getElementById('ajoutPanier');
-        console.log(btnAjoutPanier);
+        // console.log(btnAjoutPanier);
         btnAjoutPanier.addEventListener('click', function(){
             //instace du nouveau produit
             let objetProduit = new Produit(idDemande, ficheProduit.name,ficheProduit.description,ficheProduit.price, 1,ficheProduit.imageUrl);

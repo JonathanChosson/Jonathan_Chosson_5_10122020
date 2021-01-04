@@ -27,8 +27,9 @@ let viderPanier =() => {
 let affichePrix = (prixEnvoi) => {
     prix = `${prixEnvoi}`;
     finPrix = prix.slice(-3);
-    debutPrix = prix.replace(finPrix, '');
-    prix = debutPrix + " " + finPrix;
+    finPrix = finPrix.slice(0,2);
+    debutPrix = prix.replace(prix.slice(-3), '');
+    prix = debutPrix + "," + finPrix;
     return prix;
 }
 
