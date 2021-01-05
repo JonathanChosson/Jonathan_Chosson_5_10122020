@@ -9,7 +9,7 @@ if(produitDansPanier.length > 0){
         if(produitPanier.qte > 1){
             txtQte = `<p><button type="button" class="rounded moinsQte"><span class="fas fa-minus" id="${positionProduit}"></span></button> ${produitPanier.qte} <button type="button" class="rounded plusQte"><span class="fas fa-plus" id="${positionProduit}"></span></button></p>`;
         }else{
-            txtQte = `<p>${produitPanier.qte} <button type="button" class="rounded plusQte"><span class="fas fa-plus" id="${positionProduit}"></span></button></p>`;
+            txtQte = `<p><button type="button" class="rounded moinsQte" disabled><span class="fas fa-minus" id="${positionProduit}"></span></button> ${produitPanier.qte} <button type="button" class="rounded plusQte"><span class="fas fa-plus" id="${positionProduit}"></span></button></p>`;
         }
         listePanier.innerHTML += `
         <tr>
