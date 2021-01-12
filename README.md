@@ -28,6 +28,12 @@ Objectif créer un site de e-commerce :
 
 [![fonctionalités](https://img.youtube.com/vi/WkchK2hZ3r4/0.jpg)](https://www.youtube.com/watch?v=WkchK2hZ3r4)
 
+## Installation
+<ul>
+    <li>Cloner le projet</li>
+    <li>Ouvrir un terminal à la racine du dossier</li>
+    <li>Lancer la commande "node server"</li>
+</ul>
 ## Auteur
 <img src='https://img.shields.io/badge/Autor-Chosson Jonathan-blue' />
 
